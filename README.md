@@ -1,2 +1,3 @@
-# kabaddi-game
-Simple multi-player kabaddi game
+# Kabaddi
+
+Simple multi-player kabaddi game !!
