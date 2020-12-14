@@ -109,6 +109,21 @@ class Player
         });
     }
 
+    static changePosition()
+    {
+        database.ref("players/player1/position").update(
+        {
+            x: 150,
+            y: 300
+        });
+
+        database.ref("players/player2/position").update(
+        {
+            x: 450,
+            y: 300
+        });
+    }
+
     getCount()
     {
         var playerCountRef = database.ref("playerCount");
@@ -136,21 +151,6 @@ class Player
         {
             x: this.index === 1 ? player1_position.x + x : player2_position.x + x,
             y: this.index === 1 ? player1_position.y + y : player2_position.y + y
-        });
-    }
-
-    changePosition()
-    {
-        database.ref("players/player1/position").update(
-        {
-            x: 150,
-            y: 300
-        });
-
-        database.ref("players/player2/position").update(
-        {
-            x: 450,
-            y: 300
         });
     }
 }

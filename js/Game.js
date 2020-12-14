@@ -49,9 +49,9 @@ class Game
             {
                 gameState = Math.round(random(2, 3));
                 this.update(gameState);
+                Player.changePosition();
             }
         }
-        player.changePosition();
         Player.getPlayerInfo(1);
         Player.getPlayerInfo(2);
     }

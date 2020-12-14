@@ -30,7 +30,6 @@ function setup()
   game.getState();
   game.join();
 
-  fill("white");
   textSize(20);
 }
 
@@ -43,12 +42,9 @@ function draw()
   drawLines();
   drawSprites();
 
+  fill("white");
   strokeWeight(1);
   stroke("white");
-  text("RED : " + player1_score, 170, 25);
-  text("YELLOW : " + player2_score, 360, 25);
-  text(player1_name, 170, 60);
-  text(player2_name, 360, 60);
 
   if(playerCount === 2 && gameState === 0)
   {
@@ -95,8 +91,36 @@ function draw()
 
   if(Form.isReset || gameState > 3)
   {
-    text("Click on Reset and reload the page to play again !", 100, 350);
+    strokeWeight(0);
+    text("Click on Reset and reload the page to play again !", 100, 150);
   }
+
+  strokeWeight(1);
+  if(player.name === player1_name && player.name !== "")
+  {
+    stroke("#F3D3A5");
+    fill("#F3D3A5");
+  }
+  else
+  {
+    stroke("white");
+    fill("white");
+  }
+  text("RED : " + player1_score, 170, 25);
+  text(player1_name, 170, 60);
+
+  if(player.name === player2_name && player.name !== "")
+  {
+    stroke("#F3D3A5");
+    fill("#F3D3A5");
+  }
+  else
+  {
+    stroke("white");
+    fill("white");
+  }
+  text("YELLOW : " + player2_score, 360, 25);
+  text(player2_name, 360, 60);
 }
 
 function drawLines()
