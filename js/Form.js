@@ -1,5 +1,7 @@
 class Form
 {
+    static isReset = false;
+
     constructor()
     {
        this.input = createInput("Name");
@@ -58,7 +60,6 @@ class Form
             player.index = playerCount;
             player.update();
             Player.updateCount(playerCount);
-            player.displayName(player.name);
         });
 
         this.reset.mousePressed(() =>
@@ -67,6 +68,8 @@ class Form
 
             Player.updateCount(0);
             Player.resetDB();
+
+            isReset = true;
         });
 
         this.help.mousePressed(() =>

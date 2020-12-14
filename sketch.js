@@ -24,6 +24,8 @@ function setup()
 
   database = firebase.database();
 
+  Form.isReset = false;
+
   game = new Game();
   game.getState();
   game.join();
@@ -89,6 +91,11 @@ function draw()
   if(gameState === 7)
   {
     text("YELLOW LOST", 250, 250);
+  }
+
+  if(Form.isReset || gameState > 3)
+  {
+    text("Click on Reset and reload the page to play again !", 100, 350);
   }
 }
 
